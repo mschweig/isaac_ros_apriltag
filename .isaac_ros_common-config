@@ -1,0 +1,2 @@
+CONFIG_IMAGE_KEY="ros2_humble.zenoh"
+CONFIG_DOCKER_SEARCH_DIRS=(${HOME})
