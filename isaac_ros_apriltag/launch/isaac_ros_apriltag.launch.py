@@ -25,9 +25,14 @@ def generate_launch_description():
         package='isaac_ros_apriltag',
         plugin='nvidia::isaac_ros::apriltag::AprilTagNode',
         name='apriltag',
-        parameters=[{'size': 0.22,
+        remappings=[('image', 'timon/camera/frontright/image'),
+                    ('camera_info', 'timon/camera/frontright/camera_info')],
+        parameters=[{'size': 0.038,
                      'max_tags': 64,
-                     'tile_size': 4}])
+                     'tile_size': 4,
+                     'backends': 'PVA',
+                     'tag_family': 'tag25h9'}]
+    )
 
     apriltag_container = ComposableNodeContainer(
         package='rclcpp_components',
